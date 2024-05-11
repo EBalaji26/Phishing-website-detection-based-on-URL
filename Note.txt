@@ -1,0 +1,8 @@
+!pip install google
+!pip install google-cloud
+!pip install google-cloud-bigquery
+
+!pip install google-search
+from googlesearch.googlesearch import GoogleSearch
+
+!pip install whois

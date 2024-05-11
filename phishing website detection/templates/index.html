@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing Detection Website</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        body {
+            height: 100vh;
+            background-color: powderblue;
+        }
+    </style>
+</head>
+<body>
+    <div style="background-color:blue; height:20%;">
+
+    </div>
+    <center>
+        <div style="padding:60px;">
+            <h1 style="font-size: 50px;">Phishing Website Detection</h1>
+        </div>
+        <form action="{{ url_for('get_bot_response')}}" method="post">
+            <label id="msg">URL</label>
+            <input id="textInput" type="url" name="msg" placeholder="Type URL" required>
+            <button id="buttonInput">Check</button>
+        </form>
+    </center>
+    <div style="background-color: blue; height: 20%; margin-top: 12%;"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('buttonInput').addEventListener('click', function () {
+                var urlInput = document.getElementById('textInput').value;
+                localStorage.setItem("pastedText", urlInput);
+            });
+        });
+    </script>
+</body>
+</html>
